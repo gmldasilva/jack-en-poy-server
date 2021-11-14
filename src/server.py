@@ -59,7 +59,6 @@ def threaded_client(conn, p, gameId):
 
 
 while True:
-    print("looking for connection")
     conn, addr = s.accept()
     print("Connected to:", addr)
 
@@ -73,4 +72,4 @@ while True:
         games[gameId].ready = True
         p = 1
 
-    #start_new_thread(threaded_client, (conn, p, gameId))
+    start_new_thread(threaded_client, (conn, p, gameId))
